@@ -1,11 +1,10 @@
-皇家利华前端玩家项目
-1.前端的用户登录地址现在用的是存的 登录设备类型 ,PC端存PC ,设备端保存的是 登录设备类型加版本号.
-2.前端用户的实际登录地区现在还没获取到,没有传递到下注和后台的接口中,目前只能看IP
+Royal Lever front-end player project
+1. The front-end user login address is now stored in the login device type, the PC side is stored in the PC, and the device side is stored in the login device type plus version number.
+2. The actual login area of the front-end user has not been obtained yet, and it has not been passed to the interface of the betting and background. Currently, only the IP can be viewed.
 
-设置前端是否开启登录:
-1.后台需要增加前端注册设置功能
-2.前端页面和接口增加是否开放注册的判断
-前端注册按钮根据配置隐藏
-注册页面根据配置隐藏
-注册接口根据配置不允许访问
-
+Set whether to enable login on the front end:
+1. The background needs to increase the front-end registration setting function
+2. The front-end pages and interfaces are added to determine whether to open registration
+The front-end registration button is hidden according to the configuration
+The registration page is hidden according to the configuration
+The registered interface does not allow access according to the configuration
