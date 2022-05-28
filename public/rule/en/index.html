@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="zh" class="js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>Game Rule</title>
+    <link rel="stylesheet" href="./static/responsive-nav.css">
+    <link rel="stylesheet" href="./static/styles.css">
+    <script src="./static/responsive-nav.min.js"></script>
+    <script>
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+
+        var username = getQueryVariable('username')
+        console.log(username)
+        var lang = getQueryVariable('lang')
+        if (username) {
+            var Tawk_API = Tawk_API || {};
+            Tawk_API.visitor = {
+                name: username
+            };
+            var Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5eeccdf19e5f69442290ec1a/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        }
+
+    </script>
+</head>
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+<div role="navigation" id="game-menu" class="nav-collapse nav-collapse-0 closed nav-collapse-0 closed"
+     aria-hidden="false" style="transition: max-height 284ms ease 0s; position: relative;">
+    <ul>
+        <li class="  active"><a onclick="view(event,'bacc')" style="cursor:pointer">Baccarat</a></li>
+        <li class=" "><a onclick="view(event,'dt')" style="cursor:pointer">Dragon Tiger</a></li>
+        <li class=" "><a onclick="view(event,'roulette')" style="cursor:pointer">Roulette</a></li>
+        <li class=" "><a onclick="view(event,'sicbo')" style="cursor:pointer">Sic Bo</a></li>
+        <li class=" "><a onclick="view(event,'good-road')" style="cursor:pointer">Good Road</a></li>
+    </ul>
+</div>
+<div role="main" class="main">
+    <a href="javascript:;" class="nav-toggle " aria-hidden="true">Menu</a>
+    <div class="col-sm-12" id="bacc" style="width: 100%">
+        <h3>
+            BACCARAT:
+        </h3>
+
+        <div class="content">
+            <p>
+                Dealer will in order of "Player" "Banker" "Player" "Banker" deal out the cards for Player and Banker, in
+                case of have to draw one more card, then it will follow the table below, whoever has the total points of
+                9 or closes to 9 will win the hand. However, either Player or Banker has natural, then the game is over,
+                no more drawing.
+            </p>
+        </div>
+        <h3>
+            rules
+        </h3>
+        <div class="content">
+            <table class="payoff" border="1" width="100%" cellpadding="4">
+                <tbody>
+                <tr>
+                    <th> Player first Two cards</th>
+                    <th valign="middle" rowspan="2"> Player</th>
+                    <th> Banker first Two cards</th>
+                    <th valign="middle" rowspan="2"> Banker</th>
+                </tr>
+                <tr>
+                    <th> Total point</th>
+                    <th> Total point</th>
+                </tr>
+                <tr>
+                    <td> 0</td>
+                    <td> Draws card</td>
+                    <td> 0</td>
+                    <td> Draws card</td>
+                </tr>
+                <tr>
+                    <td> 1</td>
+                    <td> Draws card</td>
+                    <td> 1</td>
+                    <td> Draws card</td>
+                </tr>
+                <tr>
+                    <td> 2</td>
+                    <td> Draws card</td>
+                    <td> 2</td>
+                    <td> Draws card</td>
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td> Draws card</td>
+                    <td> 3</td>
+                    <td> If player draws a 8, then no need to draw card</td>
+                </tr>
+                <tr>
+                    <td> 4</td>
+                    <td> Draws card</td>
+                    <td> 4</td>
+                    <td> If player draws a 0,1,8 or 9, then no need to draw card</td>
+                </tr>
+                <tr>
+                    <td> 5</td>
+                    <td> Draws card</td>
+                    <td> 5</td>
+                    <td> If player draws a 0,1,2,3,8 or 9, then no need to draw card</td>
+                </tr>
+                <tr>
+                    <td> 6</td>
+                    <td> No need to draw card</td>
+                    <td> 6</td>
+                    <td> If player draws a 6 or 7, Draws card</td>
+                </tr>
+                <tr>
+                    <td> 7</td>
+                    <td> No need to draw card</td>
+                    <td> 7</td>
+                    <td> No need to draw card</td>
+                </tr>
+                <tr>
+                    <td> 8</td>
+                    <td> Natural</td>
+                    <td> 8</td>
+                    <td> Natural</td>
+                </tr>
+                <tr>
+                    <td> 9</td>
+                    <td> Natural</td>
+                    <td> 9</td>
+                    <td> Natural</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>Baccarat</h3>
+        <div class="content">
+            <table class="payoff" border="1" width="100%" cellpadding="4">
+                <tbody>
+                <tr>
+                    <th> Type</th>
+                    <th> Odds</th>
+                    <th> Condition of winning</th>
+                </tr>
+                <tr>
+                    <td> No Commission banker</td>
+                    <td> 1:1</td>
+                    <td> After cards dealt, Banker has a higher hand (Receive 0.5 times payout when banker wins with 6
+                        points.Return all bet when the result is tie)
+                    </td>
+                </tr>
+                <tr>
+                    <td> Banker</td>
+                    <td> 1:0.95</td>
+                    <td> After cards dealt, Banker has a higher hand</td>
+                </tr>
+                <tr>
+                    <td> Player</td>
+                    <td> 1:1</td>
+                    <td> After cards dealt, Player has a higher hand</td>
+                </tr>
+                <tr>
+                    <td> Tie</td>
+                    <td> 1:8</td>
+                    <td> After cards dealt, Player and Banker have the same hand,Tie return bet amount.</td>
+                </tr>
+                <tr>
+                    <td> Banker Pair</td>
+                    <td> 1:11</td>
+                    <td> Banker first two cards are the same, Non-suit</td>
+                </tr>
+                <tr>
+                    <td> Player Pair</td>
+                    <td> 1:11</td>
+                    <td> Player first two cards are the same, Non-suit</td>
+                </tr>
+                <tr>
+                    <td> Big</td>
+                    <td> 1:0.5</td>
+                    <td> After cards dealt, Player and Banker have a total of 5 or 6 cards<br>
+                        (
+                        Big bets are not accepted after 30 games of every dealing shoe.)
+                    </td>
+                </tr>
+                <tr>
+                    <td> Small</td>
+                    <td> 1:1.5</td>
+                    <td> After cards dealt, Player and Banker have a total of 4 cards<br>
+                        (
+                        Small bets are not accepted after 30 games of every dealing shoe.)
+                    </td>
+                </tr>
+                <tr>
+                    <td>lucky6</td>
+                    <td>1:12/1:20</td>
+                    <td>1:12 (If Banker wins with 6 points and no third card is drawn.)<br>
+                        1:20 (If Banker wins with 6 points and third card is drawn.)
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>
+            Note:
+        </h3>
+        <div class="content">
+            <ul>
+                <li> This web site is live gaming; under no circumstances our management decision is final and
+                    official.
+                </li>
+                <li> During shuffle time, if there is a card falls off the table or out of camera supervision, then the
+                    immediate supervisor will get a new shoe of card to replace, and re-shuffle.
+                </li>
+                <li> During cards dealt, if the dealer accidentally draws out 2 or 3 faced-down cards, then the
+                    immediate supervisor will put them in sequence position.
+                </li>
+                <li> In case of over drawn card, the card (over drawn) will be placing under the shoe box and will be
+                    using as burn card for next game and the current game continue as normal.
+                </li>
+                <li> In case of dealer forget to burn card and two or more cards are faced up (can see the face of the
+                    card), the game will be canceled and change to new boot.
+                </li>
+                <li> During the game, if there is a faced-up card found in the shoe box, then that card and all the bets
+                    are considered as valid and continue the game as normal. But if the game has offered for insurance,
+                    then the insurance consider void.
+                </li>
+                <li> During the game, If dealer forget offer insurance and dealer scanned the next card and exposed the
+                    card, we will void the insurance and the game will be continue as normal.
+                </li>
+                <li> During the game, If dealer forget scan the card and caused the scanned card result in wrong
+                    position, we will re arrange the initial card in player and banker, and void insurance. The game
+                    will be continued as normal.
+                </li>
+            </ul>
+            <h3>Online Casino will try all the best to avoid any mistakes during the game, and appreciate your patience
+                cooperation. </h3>
+        </div>
+
+
+    </div>
+
+    <div class="col-sm-12 hide" id="dt">
+        <h3>DRAGON TIGER:</h3>
+        <p>Dragon Tiger is the easiest card game in the casino. The dealer deals two cards each game, one for the Banker
+            (Dragon) and one for the Player (Tiger). Simply makes a bet to Dragon or Tiger which could draw the highest
+            card.</p>
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <thead>
+            <tr class="spetitle">
+                <th>Type</th>
+                <th>Odds</th>
+                <th>Condition of winning</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Dragon</td>
+                <td>1:1</td>
+                <td>Dragon is first card of Player and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Tiger</td>
+                <td>1:1</td>
+                <td>Tiger is first card of Banker and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Tie</td>
+                <td>1:8</td>
+                <td>After cards dealt, Player and Banker have the same hand</td>
+            </tr>
+            <tr>
+                <td>Dragon Odd</td>
+                <td>1:0.75</td>
+                <td>Dragon is first card of Player and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Dragon Even</td>
+                <td>1:1.05</td>
+                <td>Dragon is first card of Player and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Dragon Red</td>
+                <td>1:0.9</td>
+                <td>Dragon is first card of Player and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Dragon Black</td>
+                <td>1:0.9</td>
+                <td>Dragon is first card of Player and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Tiger odd</td>
+                <td>1:0.75</td>
+                <td>Tiger is first card of Banker and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Tiger Even</td>
+                <td>1:1.05</td>
+                <td>Tiger is first card of Banker and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Tiger Red</td>
+                <td>1:0.9</td>
+                <td>Tiger is first card of Banker and the point is bigger</td>
+            </tr>
+            <tr>
+                <td>Tiger Black</td>
+                <td>1:0.9</td>
+                <td>Tiger is first card of Banker and the point is bigger</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>RULES:</h3>
+        <p style="color:  red">Each shoe above 30 Bureau, do not accept single and double red and black bet.</p>
+        <p> Dragon is first card of Player. Tiger is first card of Banker.</p>
+        <p>Card from the smallest to the biggest are (ignoring the symbols):A ,2,3,4,5,6,7,8,9,10,J,Q and K.</p>
+        <p>Paid for both Dragon and Tiger is 1:1 and for Tie is 1:8.。</p>
+        <p>For Tie, betting on the Dragon and Tiger will lose half of the valid bet.</p>
+        <h3>NOTE:</h3>
+        <p>This web site is live gaming; under no circumstances our management decision is final and official.</p>
+        <p>During shuffle time, if there is a card falls off the table or out of camera supervision, then the immediate
+            supervisor will get a new shoe of card to replace, and re-shuffle.</p>
+        <p>During cards dealt, if the dealer accidentally draws out 2 or 3 faced-down cards, then the immediate
+            supervisor will put them in sequence position.</p>
+        <p>In case of over drawn card, the card (over drawn) will be placing under the shoe box and will be using as
+            burn card for next game and the current game continue as normal.</p>
+        <p>In case of dealer forget to burn card and two or more cards are faced up (can see the face of the card), the
+            game will be canceled and change to new boot.</p>
+        <p>During the game, if there is a faced-up card found in the shoe box, then that card and all the bets are
+            considered as valid and continue the game as normal.</p>
+        <h3>ONLINE CASINO WILL TRY ALL THE BEST TO AVOID ANY MISTAKES DURING THE GAME, AND APPRECIATE YOUR PATIENCE
+            COOPERATION.</h3>
+    </div>
+    <div class="col-sm-12 rules hide" id="roulette"><!--规则内容-->
+        <h3>ROULETTE:</h3>
+
+        <p class="title">Game Overview:</p>
+        <p>This game is European style single zero roulette. There are 37 coloured and numbered pockets on the wheel.
+            There is a green pocket numbered and the other pockets of the roulette wheel are numbered from 1 to 36. In
+            number ranges from 1 to 10 and 19 to 28, odd numbers are red and even are black. In ranges from 11 to 18 and
+            29 to 36, odd numbers are black and even are red. In the game, players may choose to place bets on either a
+            single number or a range of numbers, the colors red or black, or whether the number is odd or even.
+        </p>
+
+        <h3>How to Win:</h3>
+        <p>After the bet is over, the dealer will rotate the wheel in one direction and throw the ivory ball on the
+            outside of the wheel so that the ball is in the wheel for at least five weeks for the active game and landed
+            A trench for the results of the council, if the ball, but five weeks the scene will be re-start the
+            ball.</p>
+
+        <h3>Participation Instructions and Bet Options:</h3>
+        <p>1.When a game starts, you can choose the chips to place the bet based on your guess the number or the other
+            betting types in roulette table. The betting process is terminated after the countdown end.</p>
+        <p>2.When the countdown is end, dealer spins a wheel in one direction, and spins a ball in the opposite
+            direction around a tilted circular track running around the circumference of the wheel.</p>
+        <p>3.After the ball falls on one pocket, dealer will input the result number and the payoff will be displayed in
+            players' tables.</p>
+
+        <h3>Game Rule::</h3>
+        <p>The chips are placed on the different bet grids , and you can bet on any grids during the betting time.</p>
+
+        <h3>Payoff:</h3>
+        <p>There are 12 betting types in roulette game, and the following are betting types and payoff:</p>
+
+        <!--分割区域-->
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <tbody>
+            <tr>
+                <th class="spetitle">BETTING TYPES</th>
+                <th class="spetitle">EXPLANATION</th>
+                <th class="spetitle">Odds</th>
+            </tr>
+
+            <tr>
+                <td align="center">Direct</td>
+                <td>Bet is placed on a single number (included 0). The chip is placed entirely on the middle of a number
+                    square
+                </td>
+                <td align="center" style="white-space:nowrap;">1 ：35</td>
+            </tr>
+
+            <tr>
+                <th>Separate</th>
+                <th align="left">Bet on two adjoining number, either on the vertical or horizontal (as in 2-3). The
+                    chips is placed on the line between these numbers.
+                </th>
+                <th>1 ：17</th>
+            </tr>
+
+            <tr>
+                <td align="center">Street</td>
+                <td>Bet on three different numbers with the same bet. The chips is placed the outside of the row of
+                    numbers on the edge that you want to bet on. (as in 1, 2, and 3 all at once) put your chips on the
+                    line that is the outside edge of the 3.
+                </td>
+                <td align="center">1 ：11</td>
+            </tr>
+
+            <tr>
+                <th>Three Numbers</th>
+                <th align="left">Bet on the intersecting point between 0,1 and 2, or 0,2 and 3</th>
+                <th>1 ：11</th>
+            </tr>
+
+            <tr>
+                <td align="center">Triangle</td>
+                <td>Bet on four numbers in a square layout (as in 11-12-14-15). The chip is placed at the horizontal and
+                    vertical intersection of the lines between the four numbers.
+                </td>
+                <td align="center">1 ：8</td>
+            </tr>
+
+            <tr>
+                <th>Four Numbers</th>
+                <th align="left">a bet on 0, 1, 2, and 3
+                </th>
+                <th>1 ：8</th>
+            </tr>
+
+            <tr>
+                <td align="center">Line</td>
+                <td>Bet on any six numbers from two horizontal rows (as in 1-2-3-4-5-6 or 28-29-30-31-32-33, etc)</td>
+                <td align="center">1 ：5</td>
+            </tr>
+
+            <tr>
+                <th>Row</th>
+                <th align="left">Bet covers 12 numbers except number zero (as in:
+                    1st Row: 1-4-7-10-13-16-19-22-25-28-31-34
+                    2nd Row: 2-5-8-11-14-17-20-23-26-29-32-35
+                    3rd Row: 3-6-9-12-15-18-21-24-27-30-33-36)
+                </th>
+                <th>1 ：2</th>
+            </tr>
+
+            <tr>
+                <td align="center">Dozen</td>
+                <td><p>Bet on the first 12 numbers
+                    (as in: 1st 12: 1-12
+                    2nd 12: 13-24
+                    3rd: 25-36)</p></td>
+                <td align="center">1 ：2</td>
+            </tr>
+
+            <tr>
+                <th>Red / Black</th>
+                <th align="left">Bet on which color the roulette wheel will show. If show zero mean all lost</th>
+                <th>1 ：1</th>
+            </tr>
+
+            <tr>
+                <td align="center">Odd / Even</td>
+                <td>Bet on an even or odd nonzero number. If show zero mean all lost.</td>
+                <td align="center">1 ：1</td>
+            </tr>
+
+            <tr>
+                <th>Big / Small</th>
+                <th align="left">Small (as from number 1 to 18) ; Big (as from 19-36)；If show zero mean all lost.</th>
+                <th>1 ：1</th>
+            </tr>
+
+            </tbody>
+        </table>
+        <!--分割区域-->
+
+        <h3>French bets:</h3>
+        <p><b>French bets:</b> There are different number series in roulette that have special names attached to them
+            (such as the third cylinder, neighbors of zero and so on), and each covers a section of the wheel. There are
+            5 betting types in the French bets.
+        </p>
+        <p><b>Bet method：</b>Bet on elliptical roulette table, and show the chips on another roulette table. And then,
+            click "sure" to confirm your bets .</p>
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <tbody>
+            <tr>
+                <th class="spetitle">
+                    BETTING TYPES
+                </th>
+                <th class="spetitle">EXPLANATION</th>
+                <th class="spetitle">PAYOFF</th>
+            </tr>
+
+            <tr>
+                <td align="center">zero</td>
+                <td align="center">7</td>
+                <td>Straight note：0 ； 3； 12 ； 15； 26； 32 ； 35</td>
+            </tr>
+
+            <tr>
+                <th>neighbors of zero</th>
+                <th>17</th>
+                <th align="left">
+                    Straight note：0; 2; 3; 4; 7; 12; 15; 18; 19; 21; 22; 25; 26; 28; 29 ; 32; 35
+                </th>
+            </tr>
+
+            <tr>
+                <td align="center">orphans</td>
+                <td align="center">8</td>
+                <td>Straight note：1；6；9；14；17；20；31；34</td>
+            </tr>
+
+            <tr>
+                <th>the third cylinder</th>
+                <th>12</th>
+                <th align="left">Straight note：5；8；10；11；13；16；23；24；27；30；33；36</th>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+        <h3>Attention :</h3>
+        <p>• Minimum and maximum bets are based on table limits. Player can place bets within the combined range of the
+            table's playtype bet limit and the player's personal bet limit. If you would like to adjust your personal
+            bet limits' please contact customer services.</p>
+        <p>• When the ball are thrown out the roulette wheel by the dealer or the roulette wheel stops in game, this
+            game will be restarted. In case of the failure factors, all the bets and payoff will be canceled.</p>
+        <p>• In case of incorrect settlement, settlement will be re-settled based on current video result.</p>
+    </div>
+    <div class="col-sm-12 hide" id="sicbo">
+        <div class="section">
+            <h3>SIC BO:</h3>
+
+            <div class="box" id="INTRODUCTION">
+
+                <p>The SicBO is also called Big /Small bet, an old Chinese game passed from generation to generation.
+                    The game tool is a sealed dice cup inside which 3 dices are placed. Each player choose the bet to
+                    place, then guesses the total points expressed by the dices after being shaken by the machine.</p>
+            </div>
+
+        </div>
+
+
+        <div class="section">
+            <h3>PLAYING METHOD</h3>
+            <div class="box" id="PLAYING_METHOD">
+
+                <ol>
+                    <li>Upon the start of the new game, the time countdown for placing the bests is started. You can
+                        choice the chips to place the bet based on your guess.
+                    </li>
+                    <li>The betting process is terminated after the time countdown ends; the banker starts the button
+                        then rolls the dices automatically by the machine.
+                    </li>
+                    <li>After the dice cup stop running , the banker enters the three points depends on the total points
+                        of the three dices stopped , and the screen is illuminated with the lights, which allows a clear
+                        view of the winning bets and the loss odds ; the result is determined by the player's betting.
+                    </li>
+                    <li>If the dices lean on the rim of the dice cup or overlapping dices disable the reading of the
+                        dice points, the affected round and all of its wagers will be considered void and all wagering
+                        amount will be refunded, and new round will be started.
+                    </li>
+                    <li>If there are fewer than three beatings, the dealer will be shaken.</li>
+                </ol>
+            </div>
+
+        </div>
+        <div class="section">
+            <h3>BET TYPES</h3>
+            <div class="box" id="BET_TYPE">
+                <ul>
+                    <li>The chips are placed on the different bet grids , and you can bet on any grids during the
+                        betting time.
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h3>PAY OFF</h3>
+            <div class="box">
+
+                <table class="payoff" border="1" width="100%" cellpadding="4">
+                    <tbody>
+                    <tr class="color_3">
+                        <td style="text-align:center;width:150px;"><strong>BET OPTION</strong></td>
+                        <td style="text-align:center;width:399px;"><strong>EXPLANATION</strong></td>
+                        <td style="text-align:center;width:116px;"><strong>ODDS</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Big/Small</td>
+                        <td>
+                            <p> Big: Total points of dices are 11 to 17 Note: In the event that any triple comes out;
+                                all bets wagered on the portion loses.</p>
+                            Small: Total points of dices are 4 to 10 Note: In the event that any triple comes out; all
+                            bets wagered on the portion loses.
+                        </td>
+                        <td style="text-align:center;">1:1</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">Specific Triples</td>
+                        <td> Bet on the three dices will drop out three identical figure, must be a specific figure (ex.
+                            three 6's).(PS* In the event that any triple comes out; all bets wagered on this portion
+                            loses.)
+                        </td>
+                        <td style="text-align:center;">1:180</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Any Triple</td>
+                        <td>3 Bet on all six triplets at once.</td>
+                        <td style="text-align:center;">1:30</td>
+                    </tr>
+                    <tr class="color_4">
+                        <td colspan="3"><strong>One of A Kind</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">One Dice</td>
+                        <td> Bet on a dice figure that must come out on one dice (choose from dice 1 to 6).</td>
+                        <td style="text-align:center;">1:1</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">Two Dice</td>
+                        <td>Bet on a dice figure that must come out on two dices (choose from dice 1 to 6).</td>
+                        <td style="text-align:center;">1:2</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Three Dices</td>
+                        <td>Bet on a dice figure that must come out on three dices (choose from dice 1 to 6).</td>
+                        <td style="text-align:center;">1:3</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">Specific Double</td>
+                        <td>投Bet on specific pair of dice that must come out.</td>
+                        <td style="text-align:center;">1:10</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Two Dice Combination</td>
+                        <td>Bet on specific two dice combination. There are 15 types of two dice combination on the
+                            table layout.
+                        </td>
+                        <td style="text-align:center;">1:5</td>
+                    </tr>
+                    <tr class="color_4">
+                        <td colspan="3"><strong>Sum of Points</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">4 or 17 Points</td>
+                        <td>Total of 4 or 17</td>
+                        <td style="text-align:center;">1:60</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">5 or 16 Points</td>
+                        <td>Total of 5 or 16</td>
+                        <td style="text-align:center;">1:30</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">6 or 15 Points</td>
+                        <td>Total of 6 or 15</td>
+                        <td style="text-align:center;">1:17</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">7 or 14 Points</td>
+                        <td>Total of 7 or 14</td>
+                        <td style="text-align:center;">1:12</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">8 or 13 Points</td>
+                        <td>Total of 8 or 13</td>
+                        <td style="text-align:center;">1:8</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">9,10,11,or 12 Points</td>
+                        <td>Total of 9 ,10,11,12</td>
+                        <td style="text-align:center;">1:6</td>
+                    </tr>
+                    <tr class="color_4">
+                        <td colspan="3"><strong>Odd / Even</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">Odd</td>
+                        <td> Total points are 5,7,9,11,13,15,17
+                            Note: In the event that any triple comes out; all bets wagered on the portion loses.
+                        </td>
+                        <td style="text-align:center;">1:1</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">Even</td>
+                        <td>Total points are 4,6,8,10,12,14,16
+                            Note: In the event that any triple comes out; all bets wagered on the portion loses.
+                        </td>
+                        <td style="text-align:center;">1:1</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p><br>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h3>EXPLANATION</h3>
+            <div class="box">
+
+                <ol>
+                    <li>Malfunction Voids All Pays and Play</li>
+                    <li><strong>The RTP% for this game is 95.52% based on live data.</strong></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 hide" id="good-road">
+        <h3>Baccarat Good Road Manual:</h3>
+        <div class="road_bg">
+            <h5>Road 1</h5>
+            <div class="road_top"><img src="./static/images/road1_en.png"/></div>
+            <p>Definition: In the Big Road appear consecutive with 4 red circles or above.</p>
+            <b>Example:</b>
+            <div class="road_bottpm"><img src="./static/images/road1_cn_1.jpg"/></div>
+        </div>
+        <div class="road_bg">
+            <h5>Road 2</h5>
+            <div class="road_top"><img src="./static/images/road2_en.png"></div>
+            <p>Definition: In the Big Road appear consecutive with 4 blue circles or above.</p>
+            <b>Example:</b>
+            <div class="road_bottpm"><img src="./static/images/road2_cn_2.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>Road 3</h5>
+            <div class="road_top"><img src="./static/images/road3_en.png"></div>
+            <p>Definition: In the Big Road, appear 1 blue 2 red repeatedly.</p>
+            <b>Example:</b>
+            <div class="road_bottpm"><img src="./static/images/road3_cn_3.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>Road 4</h5>
+            <div class="road_top"><img src="./static/images/road4_en.png"></div>
+            <p>Definition: In the Big Road, appear 1 red 2 blue repeatedly.</p>
+            <b>Example:</b>
+            <div class="road_bottpm"><img src="./static/images/road4_cn_4.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>Road 5</h5>
+            <div class="road_top"><img src="./static/images/road5_en.png"></div>
+            <p>Definition: In the Big Road, each column equally appear 1 red 1 blue or 1 blue 1 red.</p>
+            <b>Example:</b>
+            <div class="road_bottpm"><img src="./static/images/road5_cn_5.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>Road 6</h5>
+            <div class="road_top"><img src="./static/images/road9_en.png"></div>
+            <p>Definitions: In the road way, the two free chain chase appear Zhuang, (beginning Zhuang Any Player) 4 or
+                more times or four times, it is called "double jump road." </p>
+            <b>Example:</b>
+            <div class="road_bottpm"><img src="static/images/road8_cn_9.jpg"></div>
+        </div>
+    </div>
+</div>
+<script>
+    // 判断class是否存在
+    function hasClass(elements, cName) {
+        return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)"));
+    }
+
+    // 添加clss
+    function addClass(elements, cName) {
+        if (!hasClass(elements, cName)) {
+            elements.className += " " + cName;
+        }
+    }
+
+    // 删除class
+    function removeClass(elements, cName) {
+        if (hasClass(elements, cName)) {
+            elements.className = elements.className.replace(new RegExp("(\\s|^)" + cName + "(\\s|$)"), " ");
+        }
+    }
+
+
+    const navigation = responsiveNav("game-menu", {
+        customToggle: ".nav-toggle"
+    });
+
+    const items = ['bacc', 'dt', 'roulette', 'sicbo', 'good-road'];
+
+    function view(e, type) {
+        const event = e || window.event
+        let target = event.target
+        let currentLi = target.parentNode
+        if (hasClass(currentLi, 'active')) return true;
+        let liElements = currentLi.parentNode.children
+        // 移除活动li
+        for (let i = 0, l = liElements.length; i < l; i++) {
+            if (hasClass(liElements[i], 'active')) {
+                removeClass(liElements[i], 'active')
+                break
+            }
+        }
+        addClass(currentLi, 'active')
+        items.forEach((item) => {
+            let ele = document.getElementById(item)
+            if (hasClass(ele, 'hide')) {
+                if (type === item) {
+                    removeClass(ele, 'hide')
+                }
+            } else {
+                if (type !== item) {
+                    addClass(ele, 'hide')
+                }
+            }
+        })
+        navigation.close();
+    }
+
+
+</script>
+
+
+</body>
+</html>

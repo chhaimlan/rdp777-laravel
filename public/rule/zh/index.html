@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh" class="js">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+    <title>游戏规则</title>
+    <link rel="stylesheet" href="./static/responsive-nav.css">
+    <link rel="stylesheet" href="./static/styles.css">
+    <script src="./static/responsive-nav.min.js"></script>
+    <script>
+        function getQueryVariable(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+
+        var username = getQueryVariable('username')
+        console.log(username)
+        var lang = getQueryVariable('lang')
+        if (username) {
+            var Tawk_API = Tawk_API || {};
+            Tawk_API.visitor = {
+                name: username
+            };
+            var Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5eeccdf19e5f69442290ec1a/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        }
+
+    </script>
+</head>
+<body data-gr-c-s-loaded="true" cz-shortcut-listen="true">
+<div role="navigation" id="game-menu" class="nav-collapse nav-collapse-0 closed nav-collapse-0 closed"
+     aria-hidden="false" style="transition: max-height 284ms ease 0s; position: relative;">
+    <ul>
+        <li class="  active"><a onclick="view(this,'bacc')" style="cursor:pointer">百家乐</a></li>
+        <li class=" "><a onclick="view(this,'dt')" style="cursor:pointer">龙虎</a></li>
+        <li class=" "><a onclick="view(this,'roulette')" style="cursor:pointer">轮盘</a></li>
+        <li class=" "><a onclick="view(this,'sicbo')" style="cursor:pointer">骰宝</a></li>
+        <li class=" "><a onclick="view(this,'good-road')" style="cursor:pointer">好路详解</a></li>
+    </ul>
+</div>
+<div role="main" class="main">
+    <a href="javascript:;" class="nav-toggle " aria-hidden="true">Menu</a>
+    <div class="col-sm-12 " id="bacc">
+        <h3>百家乐玩法:</h3>
+        <p>荷官会按照"闲""庄""闲""庄"顺序依次派出"庄家"和"闲家"两份牌，如果需要补牌，将依照以下补牌规则多发一张牌点数， 得9点或接近9点的一家胜出。任何一家拿到"例牌"，牌局就算结束，不再补牌。</p>
+        <h3>补牌规则</h3>
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <tbody>
+            <tr>
+                <th scope="col">闲家头两张牌</th>
+                <th scope="col" rowspan="2" style="vertical-align: middle;">闲家</th>
+                <th scope="col">庄家头两张牌
+                </th>
+                <th scope="col" rowspan="2" style="vertical-align: middle;">庄家</th>
+            </tr>
+            <tr>
+                <th scope="col">合计点数</th>
+                <th scope="col">合计点数</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>必须补牌</td>
+                <td>0</td>
+                <td>必须补牌</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>必须补牌</td>
+                <td>1</td>
+                <td>必须补牌</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>必须补牌</td>
+                <td>2</td>
+                <td>必须补牌</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>必须补牌</td>
+                <td>3</td>
+                <td>若闲家补得第三张牌是8，不得补牌</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>必须补牌</td>
+                <td>4</td>
+                <td>若闲家补得第三张牌是0,1,8,9，不得补牌</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>必须补牌</td>
+                <td>5</td>
+                <td>若闲家补得第三张牌是0,1,2,3,8,9，不得补牌</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>不得补牌</td>
+                <td>6</td>
+                <td>若闲家补得第三张牌是6,7，必须补牌</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>不得补牌</td>
+                <td>7</td>
+                <td>不得补牌</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>例牌，即定输赢</td>
+                <td>8</td>
+                <td>例牌，即定输赢</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>例牌，即定输赢</td>
+                <td>9</td>
+                <td>例牌，即定输赢</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>百家乐</h3>
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <tbody>
+            <tr>
+                <th>项目</th>
+                <th>赔率</th>
+                <th>输赢条件</th>
+            </tr>
+            </tbody>
+            <tbody>
+            <tr>
+                <td>免佣庄</td>
+                <td>1:1</td>
+                <td>牌局结束后，点数大于闲家&nbsp; (如庄以6点取胜，则赔一半；开和局时退回下注金额)</td>
+            </tr>
+            <tr>
+                <td>庄</td>
+                <td>1:0.95</td>
+                <td>牌局结束后，点数大于闲家</td>
+            </tr>
+            <tr>
+                <td>闲</td>
+                <td>1:1</td>
+                <td>牌局结束后，点数大于庄家</td>
+            </tr>
+            <tr>
+                <td>和</td>
+                <td>1:8</td>
+                <td>牌局结束后，庄闲点数一样,开和局时退回下注金额.</td>
+            </tr>
+            <tr>
+                <td>庄对子</td>
+                <td>1:11</td>
+                <td>庄的第一和第二张牌面值一样，不计花色</td>
+            </tr>
+            <tr>
+                <td>闲对子</td>
+                <td>1:11</td>
+                <td>闲的第一和第二张牌面值一样，不计花色</td>
+            </tr>
+            <tr>
+                <td>大</td>
+                <td>1:0.5</td>
+                <td>牌局结束后，庄闲共有五或六张牌(30局后不能投注大小)</td>
+            </tr>
+            <tr>
+                <td>小</td>
+                <td>1:1.5</td>
+                <td>牌局结束后，庄闲共有四张牌(30局后不能投注大小)</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>注意事项</h3>
+        <p> 本网站为真人即时视像设置，若有发生特殊情况将依照本网站公告之办法处理。</p>
+        <p>洗牌中途如有牌只不慎掉落台底或是离开镜头范围，则监场将即时另取新牌更换,重新洗牌。</p>
+        <p>派牌中途，荷官不慎拉出2或3张阴牌，则由监场按照正确位置给予更正。</p>
+        <p>如不需博牌，但荷官又拉多一张牌，则由监场将此牌放置在牌靴底下做为下一局销牌，然后牌局照旧进行。</p>
+        <p>如牌局没有销牌,而牌已开启2张或以上(可以看见牌面),则该局将会取消,并更换新靴.</p>
+        <p>在游戏过程中，如果有一张牌发现在鞋盒翻开 ，则该牌和所有的赌注都视为有效，并继续正常游戏，但是，如果游戏中有提供保险，则保险无效。</p>
+        <p>在游戏过程上，如果荷官忘记提供保险卡，扫描下暴露了卡，我们将视为保险无效和丧失，游戏将继续正常运行。</p>
+        <p>在游戏过程中，如果荷官忘记扫描卡，导致在位置上错误。我们将重新安排闲和庄初始牌，无效保险，游戏将继续正常运行。</p>
+        <h3>本网站为真人现场操作，若有操作失误，请各位会员见谅。</h3>
+    </div>
+    <div class="col-sm-12  hide" id="dt">
+        <h3>龙虎玩法:</h3>
+        <p>龙虎游戏是非常简单的赌场游戏，本游戏中龙为闲家第一张牌，虎为庄家第一张牌，根据牌面点数既定输赢，不计花色。 牌面点数以A为最小，K为最大，点数大者获胜，牌面点数大小顺序：K Q J 10 9 8 7 6 5 4 3 2
+            A。点数相同则为和，没有输赢。</p>
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <thead>
+            <tr class="spetitle">
+                <th>项目</th>
+                <th>赔率</th>
+                <th>输赢条件</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>龙</td>
+                <td>1:1</td>
+                <td>龙为闲家第一张牌</td>
+            </tr>
+            <tr>
+                <td>虎</td>
+                <td>1:1</td>
+                <td>虎为庄家第一张牌</td>
+            </tr>
+            <tr>
+                <td>和</td>
+                <td>1:8</td>
+                <td>牌局结束后，庄闲点数一样</td>
+            </tr>
+            <tr>
+                <td>龙单</td>
+                <td>1:0.75</td>
+                <td>龙为闲家第一张牌</td>
+            </tr>
+            <tr>
+                <td>龙双</td>
+                <td>1:1.05</td>
+                <td>龙为闲家第一张牌</td>
+            </tr>
+            <tr>
+                <td>龙红</td>
+                <td>1:0.9</td>
+                <td>龙为闲家第一张牌</td>
+            </tr>
+            <tr>
+                <td>龙黑</td>
+                <td>1:0.9</td>
+                <td>龙为闲家第一张牌</td>
+            </tr>
+            <tr>
+                <td>虎单</td>
+                <td>1:0.75</td>
+                <td>虎为庄家第一张牌</td>
+            </tr>
+            <tr>
+                <td>虎双</td>
+                <td>1:1.05</td>
+                <td>虎为庄家第一张牌</td>
+            </tr>
+            <tr>
+                <td>虎红</td>
+                <td>1:0.9</td>
+                <td>虎为庄家第一张牌</td>
+            </tr>
+            <tr>
+                <td>虎黑</td>
+                <td>1:0.9</td>
+                <td>虎为庄家第一张牌</td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>规则</h3>
+        <p style="color: red"> 注意：每靴30局后（即31局开始），不接受单、双、红、黑等区域投注。</p>
+        <p> 龙为闲家的第一张牌。虎为庄家的第一张牌。</p>
+        <p>牌面点数从小到大为A、2、3、4、5、6、7、8、9、10、J、Q 、K，不分花色。</p>
+        <p>龙和虎的赔率都是1:1, 下和的赔率是1:8。</p>
+        <p>出现和局时，下注龙或虎的赌金要被吃一半。</p>
+        <h3>注意事项</h3>
+        <p>本网站为真人即时视像设置，若有发生特殊情况将依照本网站公告之办法处理。</p>
+        <p>洗牌中途如有牌只不慎掉落台底或是离开镜头范围，则监场将即时另取新牌更换,重新洗牌。</p>
+        <p>派牌中途，荷官不慎拉出2或3张阴牌，则由监场按照正确位置给予更正。</p>
+        <p>如不需博牌，但荷官又拉多一张牌，则由监场将此牌放置在牌靴底下做为下一局销牌，然后牌局照旧进行。</p>
+        <p>如牌局没有销牌,而牌已开启2张或以上(可以看见牌面),则该局将会取消,并更换新靴。</p>
+        <p>牌局中途牌靴内之牌张偶有阳反，阳反之牌及该局之投注仍然有效，牌局继续进行。</p>
+        <h3>本网站为真人现场操作，若有操作失误，请各位会员见谅。</h3>
+    </div>
+    <div class="col-sm-12 hide rules" id="roulette">
+        <h3>轮盘玩法:</h3>
+
+        <p class="title">简介:</p>
+        <p>本游戏是采用国际标准的单零轮盘，单零轮盘上共有37 个细长沟道。其中一个绿色沟道的数字编号为0，另外36个沟道分别编号为1 至36，一半是红色一半是黑色。 玩家可以买单一数字或赌桌上的数字组合。
+        </p>
+
+        <p class="title">如何胜出:</p>
+        <p>下注结束后，荷官会把轮盘向一个方向转动，然后把象牙制滚球抛到轮盘的外侧，让滚球在轮盘内至少转五周才为有效的游戏，并降落在其中一个细沟内为该局结果，如果滚球转动不过五周现场会重新开始滚球。</p>
+
+        <p class="title">操作及下注指南:</p>
+        <p>1. 开始新局后，即开始下注倒数计时，请玩家在桌面不同的方格内或方格的边界上押放筹码。</p>
+        <p>2. 倒数结束前由荷官转动轮盘，并抛出滚球。</p>
+        <p>3. 由荷官输入结果数字，同时玩家画面显示结果。</p>
+
+        <p class="title">游戏规则:</p>
+        <p>筹码放在划有不同投注项目的方格的赌桌上，你可以下注在任何的方格，但要在下注时限之内押注。</p>
+
+        <p class="title">投注方式及派彩赔率:</p>
+        <p>轮盘的投注方式有 12个种类，各项投注类型与派彩赔率如下:</p>
+
+        <!--分割区域-->
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <tbody>
+            <tr>
+                <th class="spetitle">投注项目</th>
+                <th class="spetitle">说明</th>
+                <th class="spetitle">赔率</th>
+            </tr>
+
+            <tr>
+                <td align="center">直接注</td>
+                <td>1个号码（投注包括 0在内的任意一个数位。下注时将筹码放到那个数位的中心）</td>
+                <td align="center" style="white-space:nowrap;">1 ：35</td>
+            </tr>
+
+            <tr>
+                <th>分注</th>
+                <th align="left">2个号码（投注于两个号码之间的格线上 。如2和3）</th>
+                <th>1 ：17</th>
+            </tr>
+
+            <tr>
+                <td align="center">街注</td>
+                <td>3个一列的数（投注三个号码。将筹码押在轮盘桌上有三个数位那一列右侧的那条边线上）</td>
+                <td align="center">1 ：11</td>
+            </tr>
+
+            <tr>
+                <th>三数</th>
+                <th align="left">0,1,2（投注于 0, 1, 2交接区域）或0,2,3（投注于0, 2, 3的交接区域）</th>
+                <th>1 ：11</th>
+            </tr>
+
+            <tr>
+                <td align="center">角注</td>
+                <td>4个数交叉（将筹码放到四个数位方框交差的那个角区）</td>
+                <td align="center">1 ：8</td>
+            </tr>
+
+            <tr>
+                <th>四个号码</th>
+                <th align="left">0,1,2,3（将筹码放到 0和3交线的右侧以下注数位 0, 1, 2 和3）
+                </th>
+                <th>1 ：8</th>
+            </tr>
+
+            <tr>
+                <td align="center">线注</td>
+                <td>两列相交的顶部（将筹码下注到两列相交的最顶部的交点处（虚拟桌右侧），6个数字）</td>
+                <td align="center">1 ：5</td>
+            </tr>
+
+            <tr>
+                <th>行注</th>
+                <th align="left">每行12个号码（桌上每行数位底部都有带'第*行 ' 字样的方框，12个号码，不含零）</th>
+                <th>1 ：2</th>
+            </tr>
+
+            <tr>
+                <td align="center">下注一打</td>
+                <td><p>将筹码下到有 "第一打"，"第二打"和"第三打"字样的赌区以同时下注 12个数位。</p>
+                    <p>(分别为1-12、13-24及25-36)</p></td>
+                <td align="center">1 ：2</td>
+            </tr>
+
+            <tr>
+                <th>红色 / 黑色</th>
+                <th align="left">投注开奖号码为红色或黑色。若开0则通杀</th>
+                <th>1 ：1</th>
+            </tr>
+
+            <tr>
+                <td align="center">双数 / 单数</td>
+                <td>投注开奖号码为单数或双数。若开0则通杀</td>
+                <td align="center">1 ：1</td>
+            </tr>
+
+            <tr>
+                <th>大 / 小</th>
+                <th align="left">小（1-18）；大（19-36）；若开0则通杀</th>
+                <th>1 ：1</th>
+            </tr>
+
+            </tbody>
+        </table>
+        <!--分割区域-->
+
+        <p class="title">法式下注:</p>
+        <p><b>法式下注：</b>以椭圆形画出轮盘上的分区（号码、颜色），而后根据玩法不同分隔为4个分区（轮盘下角注、轮上孤注、零旁注上角、轮上零旁），法式下注提供5种投注种类
+        </p>
+        <p><b>投注方式：</b>使用筹码点击"法式下注"的椭圆形轮盘对应的玩法，轮盘投注桌上显示每个玩法投注的筹码，点击确定时将所选玩法提交下单。</p>
+        <table class="payoff" border="1" width="100%" cellpadding="4">
+            <tbody>
+            <tr>
+                <th class="spetitle">投注项目</th>
+                <th class="spetitle">说明</th>
+                <th class="spetitle">投注类型</th>
+            </tr>
+
+            <tr>
+                <td align="center">轮上零旁</td>
+                <td align="center">7</td>
+                <td>直注：0 ； 3； 12 ； 15； 26； 32 ； 35</td>
+            </tr>
+
+            <tr>
+                <th>零旁注上角</th>
+                <th>17</th>
+                <th align="left">
+                    直注：0; 2; 3; 4; 7; 12; 15; 18; 19; 21; 22; 25; 26; 28; 29 ; 32; 35
+                    <!--
+                    <p>0 / 2 / 3 --- 两注</p>
+                    <p>25 / 26 / 28 / 29 ---- 两注</p>
+                    -->
+                </th>
+            </tr>
+
+            <tr>
+                <td align="center">轮上孤注</td>
+                <td align="center">8</td>
+                <td>直注：1；6；9；14；17；20；31；34</td>
+            </tr>
+
+            <tr>
+                <th>轮盘下角注</th>
+                <th>12</th>
+                <th align="left">直注：5；8；10；11；13；16；23；24；27；30；33；36</th>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+        <p class="title">请注意:</p>
+        <p>• 桌台限红是本游戏桌台主要玩法的最小、最大玩法限红。玩家在每个玩法的可押注限额是玩法限红与玩家个人限红的交集。</p>
+        <p>• 荷官在游戏进行中若把球掷出轮盘外，或轮盘停止运转等因素则该局游戏必将重新进行掷球。如遇故障因素将注销所有相关注单/派彩。</p>
+        <p>• 如遇结算错误，按照当期视频结果重新结算。</p>
+    </div>
+    <div class="col-sm-12 hide" id="sicbo">
+        <div class="section">
+            <h3>骰宝玩法:</h3>
+
+            <div class="box">
+
+                <p>骰宝也叫赌大小，是中国古老相传的游戏。这个游戏的用具是个密封的骰盅，由各玩家选择筹码下注，猜测经机械摇动后骰子开出的点数或是点数总和。</p>
+            </div>
+
+        </div>
+
+
+        <div class="section">
+            <h3>游戏玩法</h3>
+            <div class="box" id="PLAYING_METHOD">
+
+                <ol>
+                    <li>开始新局后即开始下注倒数计时，您可以依照您的猜测，选择筹码下注 。</li>
+                    <li>倒数时间结束后停止下注，再由荷官按钮经机械自动摇骰。</li>
+                    <li>待骰盅停止后，视三颗骰子停留开出的点数，由荷官输入三点数，同时画面亮起灯光，可清楚看到胜出注码和赔率；是否与玩家押注的内容相同，来判定输赢。</li>
+                    <li>如遇到斜骰和叠骰时,荷官将重摇骰,直到能够完整判读。</li>
+                    <li>如遇到骰盅跳动少于三次,荷官将重摇骰。</li>
+                </ol>
+            </div>
+
+        </div>
+        <div class="section">
+            <h3>投注种类</h3>
+            <div class="box" id="BET_TYPE">
+                <ul>
+                    <li>筹码是放在划有不同赌法的方格的赌桌上，您可以下注在任何的方格，但要在下注时限之内押注。</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h3>派彩</h3>
+            <div class="box" id="PAYOFF">
+
+                <table class="payoff" border="1" width="100%" cellpadding="4">
+                    <tbody>
+                    <tr class="color_3">
+                        <td style="text-align:center;width:150px;"><strong>下注</strong></td>
+                        <td style="text-align:center;width:399px;"><strong>说明</strong></td>
+                        <td style="text-align:center;width:116px;"><strong>赔率</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">大 / 小</td>
+                        <td>
+                            <p>大 : 总点数为 11 至 17 ( 遇围骰庄家通吃 )</p>
+                            小 : 总点数为 4 至 10 ( 遇围骰庄家通吃 )
+                        </td>
+                        <td style="text-align:center;">1 赔 1</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">围骰</td>
+                        <td>投注指定的围骰 ( 如 1 围骰 ) ，一定开出 3 颗所投注的骰子</td>
+                        <td style="text-align:center;">1 赔 180</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">全围</td>
+                        <td>3 颗骰子都一样</td>
+                        <td style="text-align:center;">1 赔 30</td>
+                    </tr>
+                    <tr class="color_4">
+                        <td colspan="3"><strong>下注在单一个点数 ( 三军 )</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">出现单骰</td>
+                        <td>投注每颗骰子 1 至 6 中指定的点数，点数出现 1 次</td>
+                        <td style="text-align:center;">1 赔 1</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">出现双骰</td>
+                        <td>投注每颗骰子 1 至 6 中指定的点数，点数出现 2 次</td>
+                        <td style="text-align:center;">1 赔 2</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">出现全骰</td>
+                        <td>投注每颗骰子 1 至 6 中指定的点数，点数出现 3 次</td>
+                        <td style="text-align:center;">1 赔 3</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">对子 ( 双骰、长牌 )</td>
+                        <td>投注指定的双骰 ( 如双 1 点 ) ，至少开出 2 颗所投注的骰子</td>
+                        <td style="text-align:center;">1 赔 10</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">牌九式 ( 骨牌、短牌 )</td>
+                        <td>投注 15 种 2 颗骰子可能出现的组合 ( 如 1 ， 2)</td>
+                        <td style="text-align:center;">1 赔 5</td>
+                    </tr>
+                    <tr class="color_4">
+                        <td colspan="3"><strong>点数总和</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">4 或 17 点</td>
+                        <td>总和为 4 或 17 点</td>
+                        <td style="text-align:center;">1 赔 60</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">5 或 16 点</td>
+                        <td>总和为 5 或 16 点</td>
+                        <td style="text-align:center;">1 赔 30</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">6 或 15 点</td>
+                        <td>总和为 6 或 15 点</td>
+                        <td style="text-align:center;">1 赔 17</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">7 或 14 点</td>
+                        <td>总和为 7 或 14 点</td>
+                        <td style="text-align:center;">1 赔 12</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">8 或 13 点</td>
+                        <td>总和为 8 或 13 点</td>
+                        <td style="text-align:center;">1 赔 8</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">9, 10, 11, 或 12</td>
+                        <td>总和为 9 ， 10 ， 11 或 12 点</td>
+                        <td style="text-align:center;">1 赔 6</td>
+                    </tr>
+                    <tr class="color_4">
+                        <td colspan="3"><strong>单 / 双</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;">单</td>
+                        <td>总点数为 5, 7, 9, 11, 13, 15, 17 点 ( 遇围骰庄家通吃 )</td>
+                        <td style="text-align:center;">1 赔 1</td>
+                    </tr>
+                    <tr class="color_5">
+                        <td style="text-align:center;">双</td>
+                        <td>总点数为 4, 6, 8, 10, 12, 14, 16 点 ( 遇围骰庄家通吃 )</td>
+                        <td style="text-align:center;">1 赔 1</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p><br>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="section">
+            <h3>其他补充说明</h3>
+            <div class="box" id="EXPLANATION">
+
+                <ol>
+                    <li>如遇故障因素将注销所有相关注单/奖金</li>
+                    <li><strong>此游戏之玩家获利率约为 95.52%</strong></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 hide" id="good-road">
+        <h3>好路详解:</h3>
+        <div class="road_bg">
+            <h5>长庄</h5>
+            <div class="road_top"><img src="./static/images/road1_cn.png"></div>
+            <p>定义：在大路中连续有4个或4个以上的庄就称之为"长庄"</p>
+            <b>例子</b>
+            <div class="road_bottpm"><img src="./static/images/road1_cn_1.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>长闲</h5>
+            <div class="road_top"><img src="./static/images/road2_cn.png"></div>
+            <p>定义：在大路路子中，连续有4个或4个以上的闲，就称之为"长闲"。</p>
+            <b>例子</b>
+            <div class="road_bottpm"><img src="./static/images/road2_cn_2.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>一闲两庄</h5>
+            <div class="road_top"><img src="./static/images/road3_cn.png"></div>
+            <p>定义：在大路路子中，闲庄庄连续出现两次或以上，就称之为"一闲两庄"。</p>
+            <b>例子</b>
+            <div class="road_bottpm"><img src="./static/images/road3_cn_3.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>一庄两闲</h5>
+            <div class="road_top"><img src="./static/images/road4_cn.png"></div>
+            <p>定义：在大路路子中，庄闲闲连续出现两次或以上，就称之为"一庄两闲"。</p>
+            <b>例子</b>
+            <div class="road_bottpm"><img src="./static/images/road4_cn_4.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>大路单跳</h5>
+            <div class="road_top"><img src="./static/images/road5_cn.png"></div>
+            <p>定义：在大路路子中，庄闲梅花间竹地出现，就称之为"大路单跳"。</p>
+            <b>例子</b>
+            <div class="road_bottpm"><img src="./static/images/road5_cn_5.jpg"></div>
+        </div>
+        <div class="road_bg">
+            <h5>大路双跳</h5>
+            <div class="road_top"><img src="./static/images/road9_cn.png"></div>
+            <p>定义：在大路路子中，两个庄闲连环追逐地出现，（庄闲开头不限）连续4次或4次以上，就称之为“大路双跳”。。</p>
+            <b>例子</b>
+            <div class="road_bottpm"><img src="./static/images/road8_cn_9.jpg"></div>
+        </div>
+    </div>
+</div>
+<script>
+    // 判断class是否存在
+    function hasClass(elements, cName) {
+        return !!elements.className.match(new RegExp("(\\s|^)" + cName + "(\\s|$)"));
+    }
+
+    // 添加clss
+    function addClass(elements, cName) {
+        if (!hasClass(elements, cName)) {
+            elements.className += " " + cName;
+        }
+    }
+
+    // 删除class
+    function removeClass(elements, cName) {
+        if (hasClass(elements, cName)) {
+            elements.className = elements.className.replace(new RegExp("(\\s|^)" + cName + "(\\s|$)"), " ");
+        }
+    }
+
+
+    const navigation = responsiveNav("game-menu", {
+        customToggle: ".nav-toggle"
+    });
+
+    const items = ['bacc', 'dt', 'roulette', 'sicbo', 'good-road'];
+
+    function view(element, type) {
+        // debugger
+        // const event = e || window.event
+        // let target = event.target
+        // let currentLi = target.parentNode
+        let currentLi = element.parentNode
+        if (hasClass(currentLi, 'active')) return true;
+        let liElements = currentLi.parentNode.children
+        // 移除活动li
+        for (let i = 0, l = liElements.length; i < l; i++) {
+            if (hasClass(liElements[i], 'active')) {
+                removeClass(liElements[i], 'active')
+                break
+            }
+        }
+        addClass(currentLi, 'active')
+        items.forEach((item) => {
+            let ele = document.getElementById(item)
+            if (hasClass(ele, 'hide')) {
+                if (type === item) {
+                    removeClass(ele, 'hide')
+                }
+            } else {
+                if (type !== item) {
+                    addClass(ele, 'hide')
+                }
+            }
+        })
+        navigation.close();
+    }
+
+    function test(){
+        console.log(111111111111)
+    }
+
+
+</script>
+
+
+</body>
+</html>

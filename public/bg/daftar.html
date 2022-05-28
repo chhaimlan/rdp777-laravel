@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>BagusCasino - Pendaftaran Anggota</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/regis.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+</head>
+<body>
+	<div class="header">
+		<div class="header-top wrapper flex">
+			<div class="logo"><a href="index.html"><img src="css/img/logo.png"></a></div>
+			<div class="head-right">
+				
+				<div class="nav">
+				<div class="wrap-collabsible">
+					<input id="collapsible" class="toggle" type="checkbox">
+					<label for="collapsible" class="lbl-toggle"></label>
+					<div class="collapsible-content">
+						<div class="content-inner">
+							<div class="nav">
+								<div class="navbar color flex">
+									<a href="index.html"><i class="fas fa-home"></i>home</a>
+									<a href="daftar.html">daftar</a>
+									<a href="peraturan.html">peraturan</a>
+									<a href="promo.html">promosi</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="scrolltext"><marquee>MENERIMA DEPOSIT VIA PULSA TANPA POTONGAN!!!! || WHATSAPP :  || LINK ALTERNATIF : BAGUSCASINO.NET || INFO BANK : SEMUA BANK ONLINE</marquee></div>
+	</div>
+	
+	
+	<div class="wrapper">
+	 <div class="content" style="text-align:left">
+				<form action="action_page.php">
+			  <div class="container">
+				<h2>Register</h2>
+				<hr>
+
+				<label for="username"><b>Username</b></label>
+				<input type="text" placeholder="Username 6-16 karakter standar (A~Z, a~z, 0~9) dan tanpa spasi" name="username" id="username" required>
+
+				<label for="psw"><b>Password</b></label>
+				<input type="password" placeholder="Password (6 karakter atau lebih)" name="psw" id="psw" required>
+
+				<label for="psw-repeat"><b>Konfirmasi Password</b></label>
+				<input type="password" placeholder="Password sekali lagi" name="psw-repeat" id="psw-repeat" required>
+				
+				<label for="phone"><b>Telpon</b></label>
+				<input type="text" placeholder="Masukkan Telpon" name="phone" id="phone" required>
+				
+				<label for="email"><b>Email</b></label>
+				<input type="text" placeholder="Masukkan Email" name="email" id="email" required>
+				
+				<label for="nameLen"><b>Nama Panggilan</b></label>
+				<input type="text" placeholder="Masukkan Nama" name="nameLen" id="nameLen">
+				
+				<label for="bank"><b>Nama Bank</b></label>
+				<select name="bank" id="bankType">
+                <option value="BCA">BCA</option>
+                <option value="BNI">BNI</option>
+                <option value="BRI">BRI</option>
+                <option value="DANA">DANA</option>
+                <option value="GOPAY">GOPAY</option>
+                <option value="LINK AJA">LINK AJA</option>
+                <option value="MANDIRI">MANDIRI</option>
+                </select>
+				<br>
+				
+				<label for="bank_name"><b>Nama sesuai Rekening</b></label>
+				<input type="text" placeholder="Nama sesuai Rekening" name="bank_name" id="bank_name" required>
+				
+				<label for="bank_number"><b>No Rekening</b></label>
+				<input type="text" placeholder="Masukkan nomor rekening" name="bank_number" id="bank_number" required>
+				
+				<label for="referral"><b>Referal</b></label>
+				<input type="text" placeholder="Username Referal Bila ada" name="referral" id="referral">
+				
+				<label for="referral"><b>Kode Validasi</b></label>
+				<input type="text" placeholder="Masukkan kode validasi" name="captcha" id="captcha">
+                <img id="capImg" src="http://dewalg.com/captcha/flat?gelriz1V" onclick="this.src='/captcha/flat?'+Math.random()">
+				
+				<hr>
+				<input type="checkbox" id="isChoose" name="isChoose" value="Bike">
+				<label for="isChoose">Saya telah membaca dan menerima Syarat & Ketentuan Kebijakan Privasi & Aturan Bertaruh seperti yang dipublikasikan di situs ini</label>
+				<button type="submit" class="registerbtn">Daftar</button>
+			  </div>
+			
+			</form>
+		  </div>
+	</div>
+	
+	<div class="footer">
+		Copyright © BagusCasino. All right reserved.
+	</div>
+</body>
+</html>
